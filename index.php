@@ -2,7 +2,7 @@
 
 require('vendor/autoload.php');
 
-if($_SERVER['HTTP_HOST'] !=  "supercoffeeeeeeee.herokuapp.com") {
+if($_SERVER['HTTP_HOST'] !=  "toto.com") {
   $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
   $dotenv->load();
 }
