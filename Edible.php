@@ -1,6 +1,6 @@
 <?php
 
-class Edible extends Manager {
+class Edible extends CoffeeORM {
   private $id;
   private $name;
 

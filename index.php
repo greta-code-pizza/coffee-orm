@@ -7,7 +7,7 @@ if($_SERVER['HTTP_HOST'] !=  "toto.com") {
   $dotenv->load();
 }
 
-require("Manager.php");
+require("CoffeeORM.php");
 require("Waiter.php");
 require("Edible.php");
 require("Order.php");

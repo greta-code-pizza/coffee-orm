@@ -1,6 +1,6 @@
 <?php
 
-class Manager {
+class CoffeeORM {
   private static $pdo = null;
 
   protected static function dbCnx() {
@@ -20,7 +20,6 @@ class Manager {
   }
 
   public static function all() {
-
     $child = get_called_class();
 
     $sqlQuery = "SELECT * FROM `{$child}`";

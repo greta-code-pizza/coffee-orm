@@ -1,6 +1,6 @@
 <?php
 
-class Waiter extends Manager {
+class Waiter extends CoffeeORM {
   private $id;
   private $name;
 
