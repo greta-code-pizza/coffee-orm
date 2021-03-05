@@ -7,18 +7,29 @@ if($_SERVER['HTTP_HOST'] !=  "toto.com") {
   $dotenv->load();
 }
 
-$path = "mysql:host=".$_ENV['DB_HOST'].":".$_ENV['DB_PORT'].";dbname=".$_ENV['DB_NAME'].";charset=utf8";
-	
-$pdo = 
-  new PDO(
-    $path, 
-    $_ENV['DB_USER'], 
-    $_ENV['DB_PASSWORD']
-  );
+require("Manager.php");
+require("Waiter.php");
+require("Edible.php");
+require("Order.php");
 
-		
-$sqlQuery = 'SELECT name FROM Waiter';
+$action = $_GET["action"];
 
-foreach ($pdo->query($sqlQuery) as $waiter) {
-  echo "<p>" . $waiter['name'] . "</p>";
-}
+$edibles = Edible::all();
+$waiters = Waiter::all();
+$orders = Order::all();
+
+require "{$action}.php";
+
+
+
+
+// if($action == "listWaiter") {
+//   $waiters = Waiter::all();
+//   require('listWaiter.php');
+// } else if($action == "listEdibles") {
+//   require('listEdibles.php');
+// } else {
+//   require('notFound.php');
+// }
+
+
